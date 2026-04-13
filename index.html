@@ -11,15 +11,16 @@
             color: #ffffff;
             margin: 0;
             text-align: center;
+            transition: 0.3s;
         }
 
-        /* شريط اللغات */
+        /* شريط اللغات العلوي */
         .language-selector {
             background-color: #1f1f1f;
             padding: 10px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
             border-bottom: 1px solid #333;
         }
@@ -28,15 +29,21 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            font-size: 13px;
+            font-size: 12px;
             color: #bbb;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 5px;
+            transition: 0.2s;
         }
 
-        .flag { width: 18px; height: 12px; border-radius: 2px; }
+        .lang-item:hover { background: #333; color: #fff; }
+        .flag { width: 20px; height: 14px; border-radius: 2px; pointer-events: none; }
 
         header { padding: 40px 20px; background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%); }
-        h1 { margin: 0; font-size: 2.5rem; color: #007bff; }
+        h1 { margin: 0; font-size: 2.2rem; color: #007bff; }
 
+        /* زر الاشتراك في اليوتيوب */
         .sub-button {
             background-color: #ff0000;
             color: white;
@@ -47,13 +54,14 @@
             display: inline-block;
             margin: 20px 0;
             transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
         }
 
         .sub-button:hover { transform: scale(1.05); background-color: #cc0000; }
 
         .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; }
 
-        /* تنسيق بطاقة ماين كرافت الجديدة */
+        /* بطاقة الحزمة */
         .pack-card {
             background: #1e1e1e;
             border-radius: 15px;
@@ -64,18 +72,10 @@
         }
 
         .pack-card:hover { border-color: #28a745; transform: translateY(-5px); }
-        .pack-card img { width: 100%; height: 180px; object-fit: cover; }
+        .minecraft-title { color: #28a745; font-weight: bold; margin-bottom: 10px; font-size: 1.2rem; }
         .pack-info { padding: 20px; }
 
-        .minecraft-title {
-            color: #28a745; /* لون أخضر مميز لماين كرافت */
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
+        /* زر التحميل الأخضر */
         .download-btn {
             background: #28a745;
             color: white;
@@ -85,27 +85,36 @@
             display: block;
             margin-top: 15px;
             font-weight: bold;
+            transition: 0.2s;
         }
 
         .download-btn:hover { background: #218838; }
 
+        /* أسفل الصفحة والحقوق */
         footer { background-color: #0a0a0a; padding: 30px 20px; border-top: 1px solid #222; margin-top: 40px; }
-        .created-by { color: #fff; font-weight: bold; font-size: 1.1rem; }
+        .created-by { font-weight: bold; font-size: 1.1rem; margin-top: 10px; }
+        .created-by span { color: #007bff; }
     </style>
 </head>
 <body>
 
     <div class="language-selector">
-        <div class="lang-item"><img src="https://flagcdn.com/sa.svg" class="flag"> العربية</div>
-        <div class="lang-item"><img src="https://flagcdn.com/us.svg" class="flag"> English</div>
-        <div class="lang-item"><img src="https://flagcdn.com/de.svg" class="flag"> Deutsch</div>
-        <div class="lang-item"><img src="https://flagcdn.com/es.svg" class="flag"> Español</div>
-        <div class="lang-item"><img src="https://flagcdn.com/fr.svg" class="flag"> Français</div>
+        <div class="lang-item" onclick="changeLanguage('ar')"><img src="https://flagcdn.com/sa.svg" class="flag"> العربية</div>
+        <div class="lang-item" onclick="changeLanguage('en')"><img src="https://flagcdn.com/us.svg" class="flag"> English</div>
+        <div class="lang-item" onclick="changeLanguage('hi')"><img src="https://flagcdn.com/in.svg" class="flag"> हिन्दी</div>
+        <div class="lang-item" onclick="changeLanguage('zh')"><img src="https://flagcdn.com/cn.svg" class="flag"> 中文</div>
+        <div class="lang-item" onclick="changeLanguage('ja')"><img src="https://flagcdn.com/jp.svg" class="flag"> 日本語</div>
+        <div class="lang-item" onclick="changeLanguage('id')"><img src="https://flagcdn.com/id.svg" class="flag"> Indonesia</div>
+        <div class="lang-item" onclick="changeLanguage('de')"><img src="https://flagcdn.com/de.svg" class="flag"> Deutsch</div>
+        <div class="lang-item" onclick="changeLanguage('it')"><img src="https://flagcdn.com/it.svg" class="flag"> Italiano</div>
+        <div class="lang-item" onclick="changeLanguage('fr')"><img src="https://flagcdn.com/fr.svg" class="flag"> Français</div>
+        <div class="lang-item" onclick="changeLanguage('uk')"><img src="https://flagcdn.com/ua.svg" class="flag"> Українська</div>
+        <div class="lang-item" onclick="changeLanguage('ru')"><img src="https://flagcdn.com/ru.svg" class="flag"> Русский</div>
     </div>
 
     <header>
-        <h1>1Agamert Workspace</h1>
-        <a href="https://www.youtube.com/@1Agamert?sub_confirmation=1" target="_blank" class="sub-button">
+        <h1 id="main-title">مساحة عمل 1Agamert</h1>
+        <a href="https://www.youtube.com/@1Agamert?sub_confirmation=1" target="_blank" class="sub-button" id="sub-text">
             اشترك في قناة 1Agamert 
         </a>
     </header>
@@ -114,22 +123,44 @@
         <div class="pack-card">
             <img src="https://via.placeholder.com/320x180?text=Minecraft+Packs" alt="Minecraft Preview">
             <div class="pack-info">
-                <div class="minecraft-title">
-                    Minecraft Texture Packs ©
-                </div>
-                <p>مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.</p>
-                <a href="https://drive.google.com/drive/folders/1uNZYYAgx72uszVLPHRMKqAYD6AB-wty9" target="_blank" class="download-btn">
+                <div class="minecraft-title">Minecraft Texture Packs ©</div>
+                <p id="pack-desc">مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.</p>
+                <a href="https://drive.google.com/drive/folders/1uNZYYAgx72uszVLPHRMKqAYD6AB-wty9" target="_blank" class="download-btn" id="dl-text">
                     تحميل الحزم من Google Drive
                 </a>
             </div>
         </div>
-
-        </div>
+    </div>
 
     <footer>
-        <div class="copyright">© 2026 جميع الحقوق محفوظة لـ 1Agamert</div>
+        <div id="footer-copy">© 2026 جميع الحقوق محفوظة لـ 1Agamert</div>
         <div class="created-by">By <span>1Agamert</span></div>
     </footer>
 
+    <script>
+        const translations = {
+            ar: { dir: "rtl", title: "مساحة عمل 1Agamert", sub: "اشترك في قناة 1Agamert", desc: "مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.", dl: "تحميل الحزم من Google Drive", copy: "© 2026 جميع الحقوق محفوظة لـ 1Agamert" },
+            en: { dir: "ltr", title: "1Agamert Workspace", sub: "Subscribe to 1Agamert", desc: "My exclusive collection of Minecraft resource packs.", dl: "Download from Google Drive", copy: "© 2026 All Rights Reserved to 1Agamert" },
+            hi: { dir: "ltr", title: "1Agamert वर्कस्पेस", sub: "1Agamert को सब्सक्राइब करें", desc: "मेरा विशेष माइनक्राफ्ट रिसोर्स पैक संग्रह।", dl: "Google Drive से डाउनलोड करें", copy: "© 2026 1Agamert के सभी अधिकार सुरक्षित" },
+            zh: { dir: "ltr", title: "1Agamert 工作区", sub: "订阅 1Agamert", desc: "我的独家 Minecraft 资源包收藏。", dl: "从 Google Drive 下载", copy: "© 2026 1Agamert 保留所有权利" },
+            ja: { dir: "ltr", title: "1Agamert ワークスペース", sub: "1Agamert を購読する", desc: "私の独占的な Minecraft リソースパックコレクション。", dl: "Google ドライブからダウンロード", copy: "© 2026 1Agamert 全著作権所有" },
+            id: { dir: "ltr", title: "Ruang Kerja 1Agamert", sub: "Berlangganan 1Agamert", desc: "Koleksi paket sumber daya Minecraft eksklusif saya.", dl: "Unduh dari Google Drive", copy: "© 2026 Semua Hak Dilindungi untuk 1Agamert" },
+            de: { dir: "ltr", title: "1Agamert Arbeitsbereich", sub: "1Agamert abonnieren", desc: "Meine exklusive Minecraft-Ressourcenpakete-Sammlung.", dl: "Von Google Drive herunterladen", copy: "© 2026 Alle Rechte für 1Agamert vorbehalten" },
+            it: { dir: "ltr", title: "Area di lavoro 1Agamert", sub: "Iscriviti a 1Agamert", desc: "La mia collezione esclusiva di pacchetti di risorse Minecraft.", dl: "Scarica da Google Drive", copy: "© 2026 Tutti i diritti riservati a 1Agamert" },
+            fr: { dir: "ltr", title: "Espace de travail 1Agamert", sub: "S'abonner à 1Agamert", desc: "Ma collection exclusive de packs de ressources Minecraft.", dl: "Télécharger depuis Google Drive", copy: "© 2026 Tous droits réservés à 1Agamert" },
+            uk: { dir: "ltr", title: "Робочий простір 1Agamert", sub: "Підписатися на 1Agamert", desc: "Моя ексклюзивна колекція пакетів ресурсів Minecraft.", dl: "Завантажити з Google Drive", copy: "© 2026 Усі права захищені 1Agamert" },
+            ru: { dir: "ltr", title: "Рабочее пространство 1Agamert", sub: "Подписаться на 1Agamert", desc: "Моя эксклюзивная коллекция ресурс-паков Minecraft.", dl: "Скачать с Google Drive", copy: "© 2026 Все права защищены 1Agamert" }
+        };
+
+        function changeLanguage(lang) {
+            const data = translations[lang];
+            document.documentElement.dir = data.dir;
+            document.getElementById('main-title').innerText = data.title;
+            document.getElementById('sub-text').innerText = data.sub;
+            document.getElementById('pack-desc').innerText = data.desc;
+            document.getElementById('dl-text').innerText = data.dl;
+            document.getElementById('footer-copy').innerText = data.copy;
+        }
+    </script>
 </body>
 </html>
