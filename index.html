@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
             transition: 0.3s;
         }
 
-        /* شريط اللغات العلوي */
+        /* شريط اللغات */
         .language-selector {
             background-color: #1f1f1f;
             padding: 10px;
@@ -41,9 +41,10 @@
         .flag { width: 20px; height: 14px; border-radius: 2px; pointer-events: none; }
 
         header { padding: 40px 20px; background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%); }
-        h1 { margin: 0; font-size: 2.2rem; color: #007bff; }
+        
+        .brand-name { margin: 0; font-size: 1.5rem; color: #007bff; font-weight: normal; }
+        .version-text { margin: 5px 0 0 0; font-size: 3rem; font-weight: bold; color: #ffffff; }
 
-        /* زر الاشتراك في اليوتيوب */
         .sub-button {
             background-color: #ff0000;
             color: white;
@@ -52,16 +53,13 @@
             border-radius: 30px;
             font-weight: bold;
             display: inline-block;
-            margin: 20px 0;
+            margin: 25px 0;
             transition: 0.3s;
             box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
         }
 
-        .sub-button:hover { transform: scale(1.05); background-color: #cc0000; }
-
         .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; }
 
-        /* بطاقة الحزمة */
         .pack-card {
             background: #1e1e1e;
             border-radius: 15px;
@@ -75,7 +73,6 @@
         .minecraft-title { color: #28a745; font-weight: bold; margin-bottom: 10px; font-size: 1.2rem; }
         .pack-info { padding: 20px; }
 
-        /* زر التحميل الأخضر */
         .download-btn {
             background: #28a745;
             color: white;
@@ -85,15 +82,12 @@
             display: block;
             margin-top: 15px;
             font-weight: bold;
-            transition: 0.2s;
+            cursor: pointer;
         }
 
         .download-btn:hover { background: #218838; }
 
-        /* أسفل الصفحة والحقوق */
         footer { background-color: #0a0a0a; padding: 30px 20px; border-top: 1px solid #222; margin-top: 40px; }
-        .created-by { font-weight: bold; font-size: 1.1rem; margin-top: 10px; }
-        .created-by span { color: #007bff; }
     </style>
 </head>
 <body>
@@ -113,10 +107,9 @@
     </div>
 
     <header>
-        <h1 id="main-title">مساحة عمل 1Agamert</h1>
-        <a href="https://www.youtube.com/@1Agamert?sub_confirmation=1" target="_blank" class="sub-button" id="sub-text">
-            اشترك في قناة 1Agamert 
-        </a>
+        <h2 class="brand-name" id="main-title">by 1Agamert</h2>
+        <h1 class="version-text">V.1.1.9</h1>
+        <a href="https://www.youtube.com/@1Agamert?sub_confirmation=1" target="_blank" class="sub-button" id="sub-text">Subscribe to 1Agamert</a>
     </header>
 
     <div class="container">
@@ -124,37 +117,36 @@
             <img src="https://via.placeholder.com/320x180?text=Minecraft+Packs" alt="Minecraft Preview">
             <div class="pack-info">
                 <div class="minecraft-title">Minecraft Texture Packs ©</div>
-                <p id="pack-desc">مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.</p>
-                <a href="https://drive.google.com/drive/folders/1uNZYYAgx72uszVLPHRMKqAYD6AB-wty9" target="_blank" class="download-btn" id="dl-text">
-                    تحميل الحزم من Google Drive
-                </a>
+                <p id="pack-desc">My exclusive collection of Minecraft resource packs.</p>
+                <a href="https://drive.google.com/uc?export=download&id=1uNZYYAgx72uszVLPHRMKqAYD6AB-wty9" class="download-btn" id="dl-text">Download ZIP</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div id="footer-copy">© 2026 جميع الحقوق محفوظة لـ 1Agamert</div>
+        <div id="footer-copy">© 2026 All Rights Reserved to 1Agamert</div>
         <div class="created-by">By <span>1Agamert</span></div>
     </footer>
 
     <script>
         const translations = {
-            ar: { dir: "rtl", title: "مساحة عمل 1Agamert", sub: "اشترك في قناة 1Agamert", desc: "مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.", dl: "تحميل الحزم من Google Drive", copy: "© 2026 جميع الحقوق محفوظة لـ 1Agamert" },
-            en: { dir: "ltr", title: "1Agamert Workspace", sub: "Subscribe to 1Agamert", desc: "My exclusive collection of Minecraft resource packs.", dl: "Download from Google Drive", copy: "© 2026 All Rights Reserved to 1Agamert" },
-            hi: { dir: "ltr", title: "1Agamert वर्कस्पेस", sub: "1Agamert को सब्सक्राइब करें", desc: "मेरा विशेष माइनक्राफ्ट रिसोर्स पैक संग्रह।", dl: "Google Drive से डाउनलोड करें", copy: "© 2026 1Agamert के सभी अधिकार सुरक्षित" },
-            zh: { dir: "ltr", title: "1Agamert 工作区", sub: "订阅 1Agamert", desc: "我的独家 Minecraft 资源包收藏。", dl: "从 Google Drive 下载", copy: "© 2026 1Agamert 保留所有权利" },
-            ja: { dir: "ltr", title: "1Agamert ワークスペース", sub: "1Agamert を購読する", desc: "私の独占的な Minecraft リソースパックコレクション。", dl: "Google ドライブからダウンロード", copy: "© 2026 1Agamert 全著作権所有" },
-            id: { dir: "ltr", title: "Ruang Kerja 1Agamert", sub: "Berlangganan 1Agamert", desc: "Koleksi paket sumber daya Minecraft eksklusif saya.", dl: "Unduh dari Google Drive", copy: "© 2026 Semua Hak Dilindungi untuk 1Agamert" },
-            de: { dir: "ltr", title: "1Agamert Arbeitsbereich", sub: "1Agamert abonnieren", desc: "Meine exklusive Minecraft-Ressourcenpakete-Sammlung.", dl: "Von Google Drive herunterladen", copy: "© 2026 Alle Rechte für 1Agamert vorbehalten" },
-            it: { dir: "ltr", title: "Area di lavoro 1Agamert", sub: "Iscriviti a 1Agamert", desc: "La mia collezione esclusiva di pacchetti di risorse Minecraft.", dl: "Scarica da Google Drive", copy: "© 2026 Tutti i diritti riservati a 1Agamert" },
-            fr: { dir: "ltr", title: "Espace de travail 1Agamert", sub: "S'abonner à 1Agamert", desc: "Ma collection exclusive de packs de ressources Minecraft.", dl: "Télécharger depuis Google Drive", copy: "© 2026 Tous droits réservés à 1Agamert" },
-            uk: { dir: "ltr", title: "Робочий простір 1Agamert", sub: "Підписатися на 1Agamert", desc: "Моя ексклюзивна колекція пакетів ресурсів Minecraft.", dl: "Завантажити з Google Drive", copy: "© 2026 Усі права захищені 1Agamert" },
-            ru: { dir: "ltr", title: "Рабочее пространство 1Agamert", sub: "Подписаться на 1Agamert", desc: "Моя эксклюзивная коллекция ресурс-паков Minecraft.", dl: "Скачать с Google Drive", copy: "© 2026 Все права защищены 1Agamert" }
+            ar: { dir: "rtl", title: "بواسطة 1Agamert", sub: "اشترك في قناة 1Agamert", desc: "مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.", dl: "تحميل ZIP", copy: "© 2026 جميع الحقوق محفوظة لـ 1Agamert" },
+            en: { dir: "ltr", title: "by 1Agamert", sub: "Subscribe to 1Agamert", desc: "My exclusive collection of Minecraft resource packs.", dl: "Download ZIP", copy: "© 2026 All Rights Reserved to 1Agamert" },
+            hi: { dir: "ltr", title: "by 1Agamert", sub: "Subscribe to 1Agamert", desc: "माइनक्राफ्ट रिसोर्स पैक संग्रह।", dl: "ज़िप डाउनलोड करें", copy: "© 2026 सर्वाधिकार सुरक्षित" },
+            zh: { dir: "ltr", title: "by 1Agamert", sub: "订阅 1Agamert", desc: "Minecraft 资源包收藏。", dl: "下载 ZIP", copy: "© 2026 保留所有权利" },
+            ja: { dir: "ltr", title: "by 1Agamert", sub: "1Agamert を購読", desc: "Minecraft リソースパック。", dl: "ZIPをダウンロード", copy: "© 2026 無断転載を禁じます" },
+            id: { dir: "ltr", title: "by 1Agamert", sub: "Berlangganan", desc: "Koleksi Minecraft saya.", dl: "Unduh ZIP", copy: "© 2026 Hak Cipta Dilindungi" },
+            de: { dir: "ltr", title: "by 1Agamert", sub: "Abonnieren", desc: "Minecraft Ressourcenpakete.", dl: "ZIP herunterladen", copy: "© 2026 Alle Rechte vorbehalten" },
+            it: { dir: "ltr", title: "by 1Agamert", sub: "Iscriviti", desc: "Pacchetti risorse Minecraft.", dl: "Scarica ZIP", copy: "© 2026 Tutti i diritti riservati" },
+            fr: { dir: "ltr", title: "by 1Agamert", sub: "S'abonner", desc: "Packs de ressources Minecraft.", dl: "Télécharger le ZIP", copy: "© 2026 Tous droits réservés" },
+            uk: { dir: "ltr", title: "by 1Agamert", sub: "Підписатися", desc: "Пакети ресурсів Minecraft.", dl: "Завантажити ZIP", copy: "© 2026 Усі права захищені" },
+            ru: { dir: "ltr", title: "by 1Agamert", sub: "Подписаться", desc: "Ресурс-паки Minecraft.", dl: "Скачать ZIP", copy: "© 2026 Все права защищены" }
         };
 
         function changeLanguage(lang) {
-            const data = translations[lang];
+            const data = translations[lang] || translations['en'];
             document.documentElement.dir = data.dir;
+            document.documentElement.lang = lang;
             document.getElementById('main-title').innerText = data.title;
             document.getElementById('sub-text').innerText = data.sub;
             document.getElementById('pack-desc').innerText = data.desc;
