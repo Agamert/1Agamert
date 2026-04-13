@@ -3,115 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Agamert | Bloxd Packs</title>
+    <title>1Agamert | Minecraft & Bloxd Packs</title>
     <style>
-        /* تنسيق التصميم العام */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #121212;
             color: #ffffff;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
             text-align: center;
         }
 
-        header {
-            padding: 40px 20px;
-            background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%);
+        /* شريط اللغات */
+        .language-selector {
+            background-color: #1f1f1f;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #333;
         }
 
-        h1 { margin: 0; font-size: 2.5rem; color: #007bff; }
-        p.subtitle { color: #888; margin-top: 10px; }
+        .lang-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #bbb;
+        }
 
-        /* تنسيق زر الاشتراك */
+        .flag { width: 18px; height: 12px; border-radius: 2px; }
+
+        header { padding: 40px 20px; background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%); }
+        h1 { margin: 0; font-size: 2.5rem; color: #007bff; }
+
         .sub-button {
             background-color: #ff0000;
             color: white;
-            padding: 14px 28px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
             display: inline-block;
-            transition: 0.3s;
             margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            transition: 0.3s;
         }
 
-        .sub-button:hover {
-            background-color: #cc0000;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
-        }
+        .sub-button:hover { transform: scale(1.05); background-color: #cc0000; }
 
-        /* حاوية الحزم */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 40px 20px;
-            flex: 1;
-        }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; }
 
-        /* بطاقة الحزمة */
+        /* تنسيق بطاقة ماين كرافت الجديدة */
         .pack-card {
             background: #1e1e1e;
             border-radius: 15px;
             overflow: hidden;
-            width: 300px;
+            width: 320px;
             border: 1px solid #333;
             transition: 0.3s;
         }
 
-        .pack-card:hover {
-            border-color: #007bff;
-            transform: translateY(-5px);
-        }
-
-        .pack-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background-color: #2a2a2a;
-        }
-
+        .pack-card:hover { border-color: #28a745; transform: translateY(-5px); }
+        .pack-card img { width: 100%; height: 180px; object-fit: cover; }
         .pack-info { padding: 20px; }
-        .pack-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; }
-        .pack-info p { color: #aaa; font-size: 0.9rem; margin-bottom: 20px; }
+
+        .minecraft-title {
+            color: #28a745; /* لون أخضر مميز لماين كرافت */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
 
         .download-btn {
-            background: #007bff;
+            background: #28a745;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             text-decoration: none;
             border-radius: 5px;
             display: block;
-            transition: 0.2s;
+            margin-top: 15px;
+            font-weight: bold;
         }
 
-        .download-btn:hover { background: #0056b3; }
+        .download-btn:hover { background: #218838; }
 
-        /* التذييل (Footer) */
-        footer {
-            background-color: #0a0a0a;
-            padding: 30px 20px;
-            border-top: 1px solid #222;
-            margin-top: 40px;
-        }
-
-        .copyright { color: #666; font-size: 0.9rem; margin-bottom: 5px; }
+        footer { background-color: #0a0a0a; padding: 30px 20px; border-top: 1px solid #222; margin-top: 40px; }
         .created-by { color: #fff; font-weight: bold; font-size: 1.1rem; }
-        .created-by span { color: #007bff; }
     </style>
 </head>
 <body>
 
+    <div class="language-selector">
+        <div class="lang-item"><img src="https://flagcdn.com/sa.svg" class="flag"> العربية</div>
+        <div class="lang-item"><img src="https://flagcdn.com/us.svg" class="flag"> English</div>
+        <div class="lang-item"><img src="https://flagcdn.com/de.svg" class="flag"> Deutsch</div>
+        <div class="lang-item"><img src="https://flagcdn.com/es.svg" class="flag"> Español</div>
+        <div class="lang-item"><img src="https://flagcdn.com/fr.svg" class="flag"> Français</div>
+    </div>
+
     <header>
-        <h1>Bloxd Resource Packs</h1>
-        <p class="subtitle">أفضل حزم الموارد المختارة لك</p>
-        
+        <h1>1Agamert Workspace</h1>
         <a href="https://www.youtube.com/@1Agamert?sub_confirmation=1" target="_blank" class="sub-button">
             اشترك في قناة 1Agamert 
         </a>
@@ -119,23 +112,19 @@
 
     <div class="container">
         <div class="pack-card">
-            <img src="https://via.placeholder.com/300x180" alt="Pack Preview">
+            <img src="https://via.placeholder.com/320x180?text=Minecraft+Packs" alt="Minecraft Preview">
             <div class="pack-info">
-                <h3>Viper Pack V1</h3>
-                <p>حزمة موارد لتحسين الـ FPS وتغيير شكل السيوف.</p>
-                <a href="#" class="download-btn">تحميل الحزمة</a>
+                <div class="minecraft-title">
+                    Minecraft Texture Packs ©
+                </div>
+                <p>مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.</p>
+                <a href="https://drive.google.com/drive/folders/1uNZYYAgx72uszVLPHRMKqAYD6AB-wty9" target="_blank" class="download-btn">
+                    تحميل الحزم من Google Drive
+                </a>
             </div>
         </div>
 
-        <div class="pack-card">
-            <img src="https://via.placeholder.com/300x180" alt="Pack Preview">
-            <div class="pack-info">
-                <h3>Galaxy Sky Pack</h3>
-                <p>تغيير شكل السماء إلى سماء مجرية رائعة.</p>
-                <a href="#" class="download-btn">تحميل الحزمة</a>
-            </div>
         </div>
-    </div>
 
     <footer>
         <div class="copyright">© 2026 جميع الحقوق محفوظة لـ 1Agamert</div>
