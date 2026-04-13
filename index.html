@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Agamert | Bloxd Packs</title>
+    <style>
+        /* تنسيق التصميم العام */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%);
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; color: #007bff; }
+        p.subtitle { color: #888; margin-top: 10px; }
+
+        /* تنسيق زر الاشتراك */
+        .sub-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .sub-button:hover {
+            background-color: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+        }
+
+        /* حاوية الحزم */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 40px 20px;
+            flex: 1;
+        }
+
+        /* بطاقة الحزمة */
+        .pack-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 300px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .pack-card:hover {
+            border-color: #007bff;
+            transform: translateY(-5px);
+        }
+
+        .pack-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #2a2a2a;
+        }
+
+        .pack-info { padding: 20px; }
+        .pack-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; }
+        .pack-info p { color: #aaa; font-size: 0.9rem; margin-bottom: 20px; }
+
+        .download-btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .download-btn:hover { background: #0056b3; }
+
+        /* التذييل (Footer) */
+        footer {
+            background-color: #0a0a0a;
+            padding: 30px 20px;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+
+        .copyright { color: #666; font-size: 0.9rem; margin-bottom: 5px; }
+        .created-by { color: #fff; font-weight: bold; font-size: 1.1rem; }
+        .created-by span { color: #007bff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bloxd Resource Packs</h1>
+        <p class="subtitle">أفضل حزم الموارد المختارة لك</p>
+        
+        <a href="https://www.youtube.com/@1Agamert?sub_confirmation=1" target="_blank" class="sub-button">
+            اشترك في قناة 1Agamert 
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="pack-card">
+            <img src="https://via.placeholder.com/300x180" alt="Pack Preview">
+            <div class="pack-info">
+                <h3>Viper Pack V1</h3>
+                <p>حزمة موارد لتحسين الـ FPS وتغيير شكل السيوف.</p>
+                <a href="#" class="download-btn">تحميل الحزمة</a>
+            </div>
+        </div>
+
+        <div class="pack-card">
+            <img src="https://via.placeholder.com/300x180" alt="Pack Preview">
+            <div class="pack-info">
+                <h3>Galaxy Sky Pack</h3>
+                <p>تغيير شكل السماء إلى سماء مجرية رائعة.</p>
+                <a href="#" class="download-btn">تحميل الحزمة</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">© 2026 جميع الحقوق محفوظة لـ 1Agamert</div>
+        <div class="created-by">By <span>1Agamert</span></div>
+    </footer>
+
+</body>
+</html>
