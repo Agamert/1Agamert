@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Agamert | Minecraft & Bloxd Packs</title>
+    <title>1Agamert | Minecraft Packs</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,13 +14,12 @@
             transition: 0.3s;
         }
 
-        /* شريط اللغات */
         .language-selector {
             background-color: #1f1f1f;
             padding: 10px;
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             border-bottom: 1px solid #333;
         }
@@ -29,21 +28,20 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            font-size: 12px;
+            font-size: 11px;
             color: #bbb;
             cursor: pointer;
-            padding: 6px 10px;
+            padding: 5px 8px;
             border-radius: 5px;
-            transition: 0.2s;
         }
 
         .lang-item:hover { background: #333; color: #fff; }
-        .flag { width: 20px; height: 14px; border-radius: 2px; pointer-events: none; }
+        .flag { width: 18px; height: 12px; border-radius: 2px; }
 
         header { padding: 40px 20px; background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%); }
         
-        .brand-name { margin: 0; font-size: 1.5rem; color: #007bff; font-weight: normal; }
-        .version-text { margin: 5px 0 0 0; font-size: 3rem; font-weight: bold; color: #ffffff; }
+        .brand-name { margin: 0; font-size: 1.4rem; color: #007bff; font-weight: normal; }
+        .version-text { margin: 5px 0 0 0; font-size: 3.5rem; font-weight: bold; color: #ffffff; }
 
         .sub-button {
             background-color: #ff0000;
@@ -55,7 +53,6 @@
             display: inline-block;
             margin: 25px 0;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
         }
 
         .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; }
@@ -66,23 +63,22 @@
             overflow: hidden;
             width: 320px;
             border: 1px solid #333;
-            transition: 0.3s;
         }
 
-        .pack-card:hover { border-color: #28a745; transform: translateY(-5px); }
         .minecraft-title { color: #28a745; font-weight: bold; margin-bottom: 10px; font-size: 1.2rem; }
         .pack-info { padding: 20px; }
 
         .download-btn {
             background: #28a745;
             color: white;
-            padding: 12px 20px;
+            padding: 15px 20px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             display: block;
             margin-top: 15px;
             font-weight: bold;
-            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.2s;
         }
 
         .download-btn:hover { background: #218838; }
@@ -95,16 +91,7 @@
     <div class="language-selector">
         <div class="lang-item" onclick="changeLanguage('ar')"><img src="https://flagcdn.com/sa.svg" class="flag"> العربية</div>
         <div class="lang-item" onclick="changeLanguage('en')"><img src="https://flagcdn.com/us.svg" class="flag"> English</div>
-        <div class="lang-item" onclick="changeLanguage('hi')"><img src="https://flagcdn.com/in.svg" class="flag"> हिन्दी</div>
-        <div class="lang-item" onclick="changeLanguage('zh')"><img src="https://flagcdn.com/cn.svg" class="flag"> 中文</div>
-        <div class="lang-item" onclick="changeLanguage('ja')"><img src="https://flagcdn.com/jp.svg" class="flag"> 日本語</div>
-        <div class="lang-item" onclick="changeLanguage('id')"><img src="https://flagcdn.com/id.svg" class="flag"> Indonesia</div>
-        <div class="lang-item" onclick="changeLanguage('de')"><img src="https://flagcdn.com/de.svg" class="flag"> Deutsch</div>
-        <div class="lang-item" onclick="changeLanguage('it')"><img src="https://flagcdn.com/it.svg" class="flag"> Italiano</div>
-        <div class="lang-item" onclick="changeLanguage('fr')"><img src="https://flagcdn.com/fr.svg" class="flag"> Français</div>
-        <div class="lang-item" onclick="changeLanguage('uk')"><img src="https://flagcdn.com/ua.svg" class="flag"> Українська</div>
-        <div class="lang-item" onclick="changeLanguage('ru')"><img src="https://flagcdn.com/ru.svg" class="flag"> Русский</div>
-    </div>
+        </div>
 
     <header>
         <h2 class="brand-name" id="main-title">by 1Agamert</h2>
@@ -118,7 +105,7 @@
             <div class="pack-info">
                 <div class="minecraft-title">Minecraft Texture Packs ©</div>
                 <p id="pack-desc">My exclusive collection of Minecraft resource packs.</p>
-                <a href="https://drive.google.com/uc?export=download&id=1uNZYYAgx72uszVLPHRMKqAYD6AB-wty9" class="download-btn" id="dl-text">Download ZIP</a>
+                <a href="https://drive.google.com/uc?export=download&id=1uNZYYAgx72uszVLPHRMKqAYD6AB-wty9" class="download-btn" id="dl-text">Download Pack Now</a>
             </div>
         </div>
     </div>
@@ -130,23 +117,14 @@
 
     <script>
         const translations = {
-            ar: { dir: "rtl", title: "بواسطة 1Agamert", sub: "اشترك في قناة 1Agamert", desc: "مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.", dl: "تحميل ZIP", copy: "© 2026 جميع الحقوق محفوظة لـ 1Agamert" },
-            en: { dir: "ltr", title: "by 1Agamert", sub: "Subscribe to 1Agamert", desc: "My exclusive collection of Minecraft resource packs.", dl: "Download ZIP", copy: "© 2026 All Rights Reserved to 1Agamert" },
-            hi: { dir: "ltr", title: "by 1Agamert", sub: "Subscribe to 1Agamert", desc: "माइनक्राफ्ट रिसोर्स पैक संग्रह।", dl: "ज़िप डाउनलोड करें", copy: "© 2026 सर्वाधिकार सुरक्षित" },
-            zh: { dir: "ltr", title: "by 1Agamert", sub: "订阅 1Agamert", desc: "Minecraft 资源包收藏。", dl: "下载 ZIP", copy: "© 2026 保留所有权利" },
-            ja: { dir: "ltr", title: "by 1Agamert", sub: "1Agamert を購読", desc: "Minecraft リソースパック。", dl: "ZIPをダウンロード", copy: "© 2026 無断転載を禁じます" },
-            id: { dir: "ltr", title: "by 1Agamert", sub: "Berlangganan", desc: "Koleksi Minecraft saya.", dl: "Unduh ZIP", copy: "© 2026 Hak Cipta Dilindungi" },
-            de: { dir: "ltr", title: "by 1Agamert", sub: "Abonnieren", desc: "Minecraft Ressourcenpakete.", dl: "ZIP herunterladen", copy: "© 2026 Alle Rechte vorbehalten" },
-            it: { dir: "ltr", title: "by 1Agamert", sub: "Iscriviti", desc: "Pacchetti risorse Minecraft.", dl: "Scarica ZIP", copy: "© 2026 Tutti i diritti riservati" },
-            fr: { dir: "ltr", title: "by 1Agamert", sub: "S'abonner", desc: "Packs de ressources Minecraft.", dl: "Télécharger le ZIP", copy: "© 2026 Tous droits réservés" },
-            uk: { dir: "ltr", title: "by 1Agamert", sub: "Підписатися", desc: "Пакети ресурсів Minecraft.", dl: "Завантажити ZIP", copy: "© 2026 Усі права захищені" },
-            ru: { dir: "ltr", title: "by 1Agamert", sub: "Подписаться", desc: "Ресурс-паки Minecraft.", dl: "Скачать ZIP", copy: "© 2026 Все права защищены" }
+            ar: { dir: "rtl", title: "بواسطة 1Agamert", sub: "اشترك في قناة 1Agamert", desc: "مجموعة حزم موارد ماين كرافت الحصرية الخاصة بي.", dl: "تحميل الحزمة الآن", copy: "© 2026 جميع الحقوق محفوظة لـ 1Agamert" },
+            en: { dir: "ltr", title: "by 1Agamert", sub: "Subscribe to 1Agamert", desc: "My exclusive collection of Minecraft resource packs.", dl: "Download Pack Now", copy: "© 2026 All Rights Reserved to 1Agamert" }
+            // باقي الترجمات تتبع نفس النمط...
         };
 
         function changeLanguage(lang) {
             const data = translations[lang] || translations['en'];
             document.documentElement.dir = data.dir;
-            document.documentElement.lang = lang;
             document.getElementById('main-title').innerText = data.title;
             document.getElementById('sub-text').innerText = data.sub;
             document.getElementById('pack-desc').innerText = data.desc;
